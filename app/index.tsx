@@ -1,24 +1,65 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, StyleSheet, Button } from 'react-native'
 import React from 'react'
 import {Link} from 'expo-router'
+
 const index = () => {
   return (
-    <View style ={{flex: 1, justifyContent:"center", alignItems: "center", paddingHorizontal: 89, backgroundColor:"rgb(255, 255, 255)"}}>
+    <View>
+      <Text style = {styles.title} >Como você deseja usar o app?</Text>
 
-      <Text style= {{fontSize: 36, fontWeight: "600", color:"rgb(23, 59, 66)", marginBottom:32, textAlign:"center"}}>COMO VOCÊ QUER USAR O APP?</Text>
-      <Link href="/auth/driver">
-      <Image style={{width:150, height:150}} source ={require("../assets/driver.png")}/>
+      <Link href = "/auth/driver" style = {styles.link}>
+         <Image style = {styles.images} source = { require('../assets/driver.png') }/>
       </Link>
-      <Text style={{fontSize:32, fontWeight:"bold", color:"rgb(31, 131, 149)"}}>MOTORISTA</Text>
-      <Text style={{fontSize:18, marginBottom: 32}}>Ofereça carona e ganhe dinheiro</Text>
+      <Text  style = {styles.h1} >Motorista</Text>
+      <Text style = {styles.text} >Ofereça carona e ganhe dinheiro.</Text>
 
-      <Link href="/auth/Passager">
-      <Image style={{width:150, height:150}} source ={require("../assets/Passager.png")}/>
+      <Link href = "/auth/passenger" style = {styles.link}>
+      <Image style = {styles.images} source = { require('../assets/passenger.png') }/>
       </Link>
-      <Text style={{fontSize:32, fontWeight:"bold", color:"rgb(31, 131, 149)"}}>CARONA</Text>
-      <Text style={{fontSize:18, marginBottom: 32}}>Encontre caronas e economize</Text>
-   </View>
+      <Text style = {styles.h1} >Passageiro</Text>
+      <Text style = {styles.text} >Encontre caronas e economize.</Text>
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 30,
+    position: "relative",
+    textAlign: "center",
+    paddingHorizontal: 20,
+    fontWeight: 'bold',
+    fontFamily: 'Arial, sans-serif',
+    marginTop: 15
+  },
+
+  h1: {
+    fontSize: 30,
+    position: "relative",
+    textAlign: "center",
+    paddingHorizontal: 20
+  },
+
+  link: {
+    alignSelf: "center",
+    position: "relative"
+  },
+
+  images: {
+    width: 150,
+    height: 150,
+    alignSelf: "center",
+    marginTop: 100,
+    marginBottom: 20,
+    paddingHorizontal: 20
+  },
+
+  text: {
+    fontSize: 20,
+    position: "relative",
+    textAlign: "center",
+    paddingHorizontal: 20
+  }
+})
 
 export default index

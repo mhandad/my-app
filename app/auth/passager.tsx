@@ -1,12 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-const Passager = () => {
+const passenger = () => {
   return (
-    <View>
-      <Text>Passager</Text>
+    <View style={styles.container}>
+      <Text>passenger</Text>
     </View>
   )
 }
 
-export default Passager
+const styles = StyleSheet.create({
+    container: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: 15
+    },
+  });  
+export default passenger
