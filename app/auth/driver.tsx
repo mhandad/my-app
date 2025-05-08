@@ -1,94 +1,168 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
-import React, {useState} from 'react'
-import {MaterialIcons} from '@expo/vector-icons'
-import {Link} from 'expo-router'
+import { View, Text, TextInput, ScrollView, TouchableOpacity, Pressable } from 'react-native'
+import React from 'react'
+import { MaterialIcons } from '@expo/vector-icons'
 
-const driver = () => {
+import { useRouter } from 'expo-router'
+
+const Driver = () => {
+
+  const router = useRouter()
+
   return (
     <>
-        <View style = {styles.blackboard}>
-          <Link href = "/" >
-            <MaterialIcons  name = 'arrow-back' style = {styles.arrow}/>
-          </Link>
-          <Text style = {styles.header}>Cadastro de Novo Motorista</Text>
+      <View style={{
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        backgroundColor: '#000',
+        height: 86,
+        paddingLeft: 16,
+      }}>
+        <Pressable onPress={() => router.back()}>
+          <MaterialIcons name='arrow-back' color='#fff' size={24} />
+        </Pressable>
+        <Text
+          style={{
+            marginLeft: 16,
+            color: '#FFF',
+            fontSize: 22,
+          }}>
+          Cadastro de novo motorista
+        </Text>
+      </View>
+      <ScrollView>
+        <Text
+          style={{
+            fontSize: 24,
+            paddingHorizontal: 25,
+            paddingVertical: 18
+          }}
+        >
+          Vamos realizar o seu cadrastro, só precisamos de algumas informações
+        </Text>
+        <View style={{ paddingHorizontal: 25 }}>
+          <Text
+            style={{
+              fontSize: 22,
+              fontWeight: 'bold',
+              marginBottom: 16
+            }}
+          >Informações Pessoais</Text>
+          <Text style={{ fontSize: 18 }}>Nome Completo</Text>
+          <TextInput
+            style={{
+              backgroundColor: '#FDFDFD',
+              borderWidth: 1,
+              borderColor: '#C0C0C0',
+              borderRadius: 8,
+              height: 42,
+              marginBottom: 16,
+              padding: 8
+            }} />
+          <Text style={{ fontSize: 18 }}>Email</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
+          <Text style={{ fontSize: 18 }}>Telefone/Whatsapp</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
+          <Text style={{ fontSize: 18 }}>Senha</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
         </View>
-
-        <View style = {styles.container}>
-            <Text style = {styles.text}>Vamos realizar o seu cadastro, só precisamos de algumas informações:</Text>
+        <View
+          style={{
+            paddingHorizontal: 25,
+            paddingVertical: 18
+          }}>
+          <Text
+            style={{
+              fontSize: 22,
+              fontWeight: 'bold',
+              marginBottom: 16
+            }}
+          >Informações do Veículo</Text>
+          <Text style={{ fontSize: 18 }}>Marca</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
+          <Text style={{ fontSize: 18 }}>Modelo</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
+          <Text style={{ fontSize: 18 }}>Ano</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
+          <Text style={{ fontSize: 18 }}>Placa</Text>
+          <TextInput style={{
+            backgroundColor: '#FDFDFD',
+            borderWidth: 1,
+            borderColor: '#C0C0C0',
+            borderRadius: 8,
+            height: 42,
+            marginBottom: 16,
+            padding: 8
+          }} />
         </View>
-
-        <View style = {styles.container}>
-          <Text style = {styles.text}>Informações Pessoais</Text>
-
-          <Text style = {styles.formfields}>Nome Completo</Text>
-          <TextInput />
-
-          <Text style = {styles.formfields}>Email</Text>
-          <TextInput />
-
-          <Text style = {styles.formfields}>Telefone/Whatsapp</Text>
-          <TextInput />
-
-          <Text style = {styles.formfields}>Senha</Text>
-          <TextInput />
-        </View>
-        
-        <View style = {styles.container}>
-          <Text style = {styles.text}>Informações do Veículo</Text>
-
-          <Text style = {styles.formfields}>Marca</Text>
-          <TextInput />
-
-          <Text style = {styles.formfields}>Modelo</Text>
-          <TextInput />
-          
-          <Text style = {styles.formfields}>Ano</Text>
-          <TextInput />
-          
-          <Text style = {styles.formfields}>Placa</Text>
-          <TextInput />
-        </View>
+      </ScrollView>
+      <View style={{
+        backgroundColor: '#000',
+        height: 86,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Pressable onPress={() => router.push('/(tabs)/home')}>
+          <Text
+            style={{
+              color: '#FFF',
+              fontSize: 22,
+            }}>
+            Cadastrar
+          </Text>
+        </Pressable>
+      </View>
     </>
+
   )
 }
 
-const styles = StyleSheet.create({
-    container: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 15
-    },
-    arrow: {
-      marginLeft: 15,
-      color: '#FFF',
-      fontSize: 35,
-      alignSelf: 'center'
-    },
-    text: {
-      marginHorizontal: 15,
-      fontSize: 20,
-      fontWeight: 'bold',
-      textAlign: 'left'
-    },
-    blackboard: {
-      backgroundColor: '#000',
-      height: 80,
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      flexDirection: 'row'
-    },
-    header: {
-      color: '#FFF',
-      fontSize: 22, 
-      textAlign: 'center',
-      fontWeight: 'bold', 
-      marginLeft: 25
-    },
-    formfields:{
-      textAlign: 'left',
-      fontSize: 18,
-      marginTop: 10,
-      marginBottom: 5
-    }
-  });  
-export default driver
+export default Driver

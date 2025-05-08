@@ -1,7 +1,6 @@
-{ 
-  
-    "expo": {
-    "scheme": "carona",
+{
+  "expo": {
+    "scheme": "carona-scheme",
     "name": "carona",
     "slug": "carona",
     "version": "1.0.0",
@@ -24,8 +23,8 @@
       }
     },
     "web": {
-      "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router"
