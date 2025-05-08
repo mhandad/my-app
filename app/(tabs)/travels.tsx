@@ -1,12 +1,28 @@
-import {View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 
-
-const travels = () => {
+const Travels = () => {
     return (
         <View>
-            <Text>Travels</Text>
+
+          <View>
+
+            <View>
+              <Text>De: Cedro</Text>
+              <Text>Para: Fortaleza</Text>
+              <Text>Data: 20/09/2025</Text>
+              <Text>Horário: 08:00h</Text>
+            </View>
+
+            <View>
+              <Text>Vagas</Text>
+              <Text>3/4</Text>
+            </View>
+
+          </View>
+
         </View>
     )
 }
-export default travels
+
+export default Travels
